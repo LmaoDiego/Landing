@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación de Currículum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #ff007f, #00aaff); /* Fondo de gradiente */
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+			cursor: none; /* Oculta el cursor normal */
+        }
+        /* Efecto de neón con imagen de cursor */
+        .neon-cursor {
+            position: absolute;
+            width: 26px; /* Tamaño del área del cursor incluyendo el borde */
+            height: 26px;
+            border: 2px solid #00ffcc;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+            pointer-events: none; /* Asegura que el elemento no interfiera con otros elementos */
+            transform: translate(-50%, -50%);
+            animation: neonPulse 1.5s infinite alternate;
+            background: url('ardilla-listada.png') center center no-repeat;
+            background-size: 28px 28px; /* Tamaño de la imagen dentro del área del cursor */
+        }
+
+		
+        @keyframes neonPulse {
+            0% {
+                box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+            }
+            50% {
+                box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 60px #00ffcc;
+            }
+            100% {
+                box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+            }
+        }
+		  a, button {
+            cursor: none; /* Oculta el cursor cuando se pasa sobre enlaces y botones */
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra la imagen y el contenido horizontalmente */
+            justify-content: center; /* Centra la imagen y el contenido verticalmente */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #00ffcc;
+            margin-bottom: 20px;
+            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+        }
+
+        .profile h1 {
+            font-size: 2.5em;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            font-size: 1.2em;
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px #00ffcc;
+        }
+
+        .skill i {
+            font-size: 2.5em;
+            color: #00ffcc;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            font-size: 1em;
+            color: #cccccc;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .profile h1 {
+                font-size: 2em;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .skill i {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="ardilla.jpeg" alt="La Ardilla">
+            <h1>DIEGO ADRIAN GOMEZ FAJARDO</h1>
+            <p>Bachiller en Ingeniería de Software.</p>
+        </div>
+
+        <div class="skills">
+            <div class="skill">
+			    <a href="https://www.facebook.com/stories/627163414992453/?source=profile_highlight" target="_blank" style="text-decoration: none; color: inherit;">
+					<i class="fab fa-python"></i>
+					<h3>Python</h3>
+					<p>Desarrollo avanzado en Python, incluyendo automatización, IA, y más.</p>
+				</a>
+            </div>
+            <div class="skill">
+			<a href="https://www.facebook.com/stories/711017076539471/?source=profile_highlight" target="_blank" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-robot"></i>
+                <h3>Inteligencia Artificial</h3>
+                <p>Implementación de soluciones de IA en proyectos de software complejos.</p>
+				</a>
+            </div>
+            <div class="skill">
+			<a href="https://www.facebook.com/photo/?fbid=1118249088688005&set=a.118786811967576" target="_blank" style="text-decoration: none; color: inherit;">
+                <i class="fab fa-microsoft"></i>
+                <h3>.NET</h3>
+                <p>Desarrollo con .NET Core, incluyendo aplicaciones web y de escritorio.</p>
+				</a>
+            </div>
+            <div class="skill">
+			<a href="https://www.facebook.com/stories/627163414992453/?source=profile_highlight" target="_blank" style="text-decoration: none; color: inherit;">
+                <i class="fab fa-git-alt"></i>
+                <h3>Control de Versiones</h3>
+                <p>Experiencia en Git, GitHub, y Bitbucket para control de versiones y CI/CD.</p>
+				</a>
+            </div>
+        </div>
+    </div>
+	
+	<div class="neon-cursor"></div>
+    <script>
+        const cursor = document.querySelector('.neon-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+    </script>
+</body>
+</html>
